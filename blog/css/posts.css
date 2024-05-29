@@ -1,0 +1,180 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+
+/* menu --------------------*/
+
+.todos-os-posts {
+    max-width: 1200px;
+    margin: 0px auto;
+    /* background-color: #ccc; */
+    display: flex;
+    justify-content: center;
+}
+
+.posts {
+    width: 650px;
+    /* background-color: yellow; */
+}
+
+.post {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #0088ffff;
+    padding: 20px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post-imagem {
+    height: 100%;
+    max-width: 300px;
+}
+
+.post-imagem > img {
+    height: 100%;
+    width: 100%;
+}
+
+.post-conteudo {
+    text-align: justify;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.titulo-post {
+    text-align: center;
+    text-decoration: none;
+    font-size: 2em;
+    color: blue;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.post-conteudo>span {
+    color: blue;
+}
+
+.titulo-post:hover {
+    color: gray;
+}
+
+/* post ---------------------------- */ 
+
+.favoritos {
+    max-height: 800px;
+    width: 300px;
+    padding: 0px 10px;
+    margin-left: 50px;
+    background-color: rgb(0, 153, 255);
+}
+
+.favoritos-botoes {
+    height: 60px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botao {
+    height: 50px;
+    width: 50px;
+    margin: 5px;
+    color: blue;
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.favoritos-post {
+    height: 150px;
+    padding: 20px;
+    border-top: 1px solid lightgray;
+    margin: 0px auto;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+.favoritos-post-conteudo {
+    margin-left: 10px;
+}
+
+.favoritos-post>div {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.titulo-lateral {
+    display: inline-block;
+    font-size: 1.2em;
+    text-decoration: none;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.titulo-lateral:hover,
+.botao:hover {
+    color: lightgray;
+}
+
+.imagem-lateral {
+    height: 60px;
+    width: 80px;
+}
+
+.imagem-lateral>img {
+    height: 100%;
+    width: 100%;
+}
+
+/* favoritos ---------------------*/
+
+@media screen and (max-width: 1000px) {
+    .todos-os-posts {
+        width: 900px;
+    }
+}
+
+@media screen and (max-width: 920px) {
+    .todos-os-posts {
+        width: 800px;
+    }
+
+    .favoritos {
+        display: none;
+    }
+
+    .posts {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    .todos-os-posts {
+        width: 700px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .todos-os-posts {
+        width: 580px;
+    }
+
+    .post {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .todos-os-posts {
+        width: 350px;
+    }
+}
