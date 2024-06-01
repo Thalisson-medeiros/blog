@@ -1,26 +1,26 @@
-.login {
-    width: 400px;
+.cadastro {
+    margin: 100px auto;
+    max-width: 400px;
     height: 300px;
     background-color: #0088ffff;
-    margin: 100px auto;
 }
 
-.formulario-login {
-    height: 200px;
+.formulario-cadastro {
+    height: 250px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     align-items: center;
+    justify-content: space-around;
 }
 
 input {
     width: 80%;
-    background-color: transparent;
     border: none;
     border-bottom: 1px solid #fff;
-    font-size: 16px;
     color: #fff;
+    font-size: 16px;
     outline: none;
+    background-color: transparent;
 }
 
 input::placeholder {
@@ -28,15 +28,15 @@ input::placeholder {
     font-size: 16px;
 }
 
-.btn-login {
+.btn-formulario {
     height: 40px;
     background-color: #fff;
     color: #0088ffff;
-    border: none;
     cursor: pointer;
+    border: none;
 }
 
-.btn-login:hover {
+.btn-formulario:hover {
     background-color: #000;
     color: #fff;
 }
@@ -46,7 +46,7 @@ p {
 }
 
 p > a {
-    text-decoration: none;
     margin-left: 5px;
     color: #fff;
+    text-decoration: none;
 }

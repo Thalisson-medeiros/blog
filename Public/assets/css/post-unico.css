@@ -26,7 +26,7 @@ h1 {
 .imagem {
     margin: 0px auto;
     height: 300px;
-    width: 400px;
+    max-width: 400px;
 }
 
 .imagem > img {
@@ -57,7 +57,6 @@ h1 {
 /* subtitulo */
 
 .posts-relacionados {
-    height: 300px;
     width: 80%;
     margin: 0px auto 40px auto;
     background-color: lightgray;
@@ -67,9 +66,10 @@ h1 {
 }
 
 .imagem-posts-relacionados {
-    height: 250px;
-    width: 300px;
+    height: 150px;
+    width: 200px;
     position: relative;
+    margin: 40px 0px;
 }
 
 .imagem-posts-relacionados > img {
@@ -88,4 +88,52 @@ h1 {
     top: 75%;
     left: 50%;
     transform: translate(-50%, -25%);
+}
+
+/* post */
+
+.quantidade-comentarios {
+    margin-right: 10px;
+}
+
+.comentarios {
+    width: 80%;
+    margin: 0px auto;
+}
+
+.texto-comentario {
+    outline: none;
+    height: 150px;
+    width: 100%; 
+    resize: none;
+    padding: 10px;
+}
+
+.btn-cadastrar, .btn-comentar {
+    color: #fff;
+    text-decoration: none;
+    background-color: #0088ffff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.btn-cadastrar:hover, .btn-comentar:hover {
+    color: #fff;
+    background-color: #000;
+}
+
+@media screen and (max-width: 800px){
+    .posts-relacionados {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .imagem-posts-relacionados {
+        height: 200px;
+        width: 300px;
+    }
 }
