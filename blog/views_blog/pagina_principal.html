@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../css/posts.css">
     <link rel="stylesheet" href="../css/menu.css">
     <link rel="stylesheet" href="../css/footer.css">
@@ -12,24 +13,54 @@
     <nav class="menu">
         <section class="social">
             <ul>
-                <li><a href="facebook">facebook</a></li>
-                <li><a href="youtube">youtube</a></li>
-                <li><a href="X">X</a></li>
-                <li><a href="pinterest">pinterest</a></li>
+                <li>
+                    <a href="facebook">
+                        <i class="fa-brands fa-square-facebook"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="youtube">  
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="X">        
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="pinterest">
+                        <i class="fa-brands fa-pinterest"></i>
+                    </a>
+                </li>
             </ul>
         </section>
 
         <div class="titulo">
-            <h1>Blog</h1>
+            <a href="#">Blog</a>
         </div>
 
         <section class="menu-items">
             <ul>
-                <li><a href="home">home</a></li>
+                <li><a href="home"><i class="fa-solid fa-house"></i></a></li>
                 <li><a href="Esporte">Esporte</a></li>
                 <li><a href="lazer">lazer</a></li>
                 <li><a href="automoveis">automoveis</a></li>
                 <li><a href="curiosidades">curiosidades</a></li>
+            </ul>
+        </section>
+
+        <section class="menu-escondido">
+            <div>
+                <a href="#" class="menu-escondido-btn"><i class="fa-solid fa-house"></i></a>
+                <button class="menu-escondido-btn" onclick="exibirMenu()"><i class="fa-solid fa-bars"></i></button>
+            </div>
+            
+            <ul class="menu-escondido-items">
+                <li><a class="menu-escondido-btn" href="Esporte">Esporte</a></li>
+                <li><a class="menu-escondido-btn" href="lazer">lazer</a></li>
+                <li><a class="menu-escondido-btn" href="automoveis">automoveis</a></li>
+                <li><a class="menu-escondido-btn" href="curiosidades">curiosidades</a></li>
             </ul>
         </section>
     </nav>
@@ -55,9 +86,9 @@
         
         <aside class="favoritos">
             <div class="favoritos-botoes">
-                <button class="botao">1</button>
-                <button class="botao">2</button>
-                <button class="botao">3</button>
+                <button class="botao"><i class="fa-regular fa-star"></i></button>
+                <button class="botao"><i class="fa-solid fa-tag"></i></button>
+                <button class="botao"><i class="fa-solid fa-video"></i></button>
             </div>
             <div class="favoritos-post">
                 <div>
@@ -78,10 +109,26 @@
     <footer>
         <section class="social-footer">
             <ul>
-                <li><a href="facebook">facebook</a></li>
-                <li><a href="youtube">youtube</a></li>
-                <li><a href="X">X</a></li>
-                <li><a href="pinterest">pinterest</a></li>
+                <li>
+                    <a class="footer-btn" href="facebook">
+                        <i class="fa-brands fa-square-facebook"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="footer-btn" href="youtube">  
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="footer-btn" href="X">        
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="footer-btn" href="pinterest">
+                        <i class="fa-brands fa-pinterest"></i>
+                    </a>
+                </li>
             </ul>
 
             <p>Criado por Tam&copy;</p>
@@ -89,5 +136,7 @@
             <small>2024</small>
         </section> 
     </footer>
+
+    <script src="../js/index.js"></script>
 </body>
 </html>

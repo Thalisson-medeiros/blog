@@ -4,10 +4,20 @@
 }
 
 body {
+    max-width: 1300px;
+    margin: 0px auto;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 
+.menu-items {
+    color: #fff;
+    background-color: #0088ffff;
+}
+
+.menu-escondido {
+    display: none;
+}
 
 /* menu --------------------*/
 
@@ -87,6 +97,7 @@ body {
 .botao {
     height: 50px;
     width: 50px;
+    font-size: 1em;
     margin: 5px;
     color: blue;
     border: none;
@@ -137,6 +148,11 @@ body {
 
 /* favoritos ---------------------*/
 
+.menu-escondido.ativo {
+    height: 250px;
+    transition: 1s;
+}
+
 @media screen and (max-width: 1000px) {
     .todos-os-posts {
         width: 900px;
@@ -171,10 +187,72 @@ body {
     .post {
         flex-direction: column;
     }
+
+    footer {
+        height: 100px;
+    }
+
+    .social-footer > ul {
+        width: 100%;
+        background-color: #000;
+    }
+
+    .social-footer {
+        flex-direction: column;
+    }
 }
 
 @media screen and (max-width: 600px) {
     .todos-os-posts {
         width: 350px;
+    }
+
+    .menu-items {
+        display: none;
+    }
+
+    .menu-escondido {
+        display: block;
+        height: 40px;
+        overflow: hidden;
+        transition: 1s;
+        line-height: 40px;
+        background: #0088ffff;
+    }
+
+    .menu-escondido > div {
+        width: 90%;
+        margin: 0px auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu-escondido > div > a{
+        color: #fff;
+    }
+
+    .menu-escondido-items {
+        height: 100%;
+        width: 100%;
+        border-top: 1px solid #fff;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .menu-escondido-btn {
+        color: #fff;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        font-size: 1em;
+        text-decoration: none;
+    }
+
+    .menu-escondido-btn:hover {
+        color: #000;
     }
 }

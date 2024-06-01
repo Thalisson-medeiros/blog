@@ -16,7 +16,7 @@
     margin: 0px auto;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -37,8 +37,17 @@
     display: flex;
     align-items: center;
     height: 200px;
-    font-size: 3em;
     padding-left: 20px;
+}
+
+.titulo > a {
+    color: #fff;
+    font-size: 4em;
+    text-decoration: none;
+}
+
+.titulo > a:hover {
+    color: #0088ffff;
 }
 
 .menu-items {

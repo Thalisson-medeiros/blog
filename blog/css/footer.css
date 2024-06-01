@@ -1,0 +1,29 @@
+footer {
+    width: 100%;
+    margin-top: 20px;
+    color: #fff;
+    background-color: #0088ffff;
+}
+
+.social-footer {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.social-footer > ul {
+    min-width: 300px;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer-btn {
+    color: #fff;
+}
+
+.footer-btn:hover {
+    color: #000;
+}
