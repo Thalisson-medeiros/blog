@@ -1,3 +1,19 @@
+<?
+    if(isset($_SESSION['username'])){
+        echo  $_SESSION['username'];
+    }
+
+    // posts
+    // echo '<pre>';
+    // print_r($this->view->posts);
+    // echo '</pre>';
+
+    //favorites
+    echo '<pre>';
+    print_r($this->view->favoritePosts);
+    echo '</pre>';
+?>
+
 <title>principal</title>
 
 <section class="todos-os-posts">

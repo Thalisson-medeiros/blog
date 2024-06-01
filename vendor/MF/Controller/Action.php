@@ -1,6 +1,7 @@
 <?php
 
 namespace MF\Controller;
+use MF\Model\Container;
 
 //aqui irão ficar as abstrações dos controllers
 abstract class Action
@@ -10,6 +11,15 @@ abstract class Action
     public function __construct()
     {
         $this->view = new \stdClass;
+        session_start();
+    }
+
+    protected function validateLogin(): void
+    {
+        if(!isset($_SESSION['id']) || !isset($_SESSION['username'])){
+            header('Location:/');
+            exit;
+        }
     }
 
     protected function render(string $view, string $layout = 'layout'): void
@@ -29,7 +39,5 @@ abstract class Action
         $className = strtolower(str_replace('Controller', '', $className));
 
         require_once "../App/Views/". $className . "/" . $this->view->page . ".phtml";
-    }
-
-    
+    }  
 }

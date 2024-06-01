@@ -6,7 +6,7 @@ namespace App;
 class Connection
 {
     private const HOST = 'localhost';
-    private const DBNAME = 'blog';
+    private const DBNAME = 'blog1';
     private const CHARSET = 'utf8';
     private const USER = 'root';
     private const PASSWORD = '';

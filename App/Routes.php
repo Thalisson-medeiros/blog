@@ -32,6 +32,24 @@ class Routes extends Bootstrap
             'action' => 'login'
         ];        
 
+        $route['cadastrar'] = [
+            'route' => '/cadastrar',
+            'controller' => 'AuthController',
+            'action' => 'cadastro'
+        ];        
+        
+        $route['logar'] = [
+            'route' => '/logar',
+            'controller' => 'AuthController',
+            'action' => 'login'
+        ];
+        
+        $route['sair'] = [
+            'route' => '/sair',
+            'controller' => 'AuthController',
+            'action' => 'exit'
+        ];
+
         $this->setRoutes($route);
     }
 }

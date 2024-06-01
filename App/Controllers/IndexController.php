@@ -10,6 +10,12 @@ class IndexController extends Action
 
     public function index()
     {
+        $posts = Container::getModel('posts');
+        $this->view->posts = $posts->getPosts();
+
+        $posts = Container::getModel('posts');
+        $this->view->favoritePosts = $posts->getFavoritePosts();
+
         $this->render('index');
     }
 

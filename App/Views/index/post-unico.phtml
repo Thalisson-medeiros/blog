@@ -53,12 +53,17 @@
 <section class="comentarios">
     <h2><span class="quantidade-comentarios">0</span>Comentários:</h2>
 
-    <!-- aqui fazer uma verificação. se o usuario for cadastrado mostrar a caixa de texto
-         senão mostrar o botão de cadastro. -->
     <div>
         <textarea name="comentario" class="texto-comentario" placeholder="Comentar..."></textarea>
     </div>
 
-    <button class="btn-comentar">Comentar</button>
-    <a href="/cadastro" class="btn-cadastrar">Faça login para poder comentar</a>
+    <!-- aqui fazer uma verificação. se o usuario for cadastrado mostrar a caixa de texto
+         senão mostrar o botão de cadastro. -->
+
+    <?if(isset($_SESSION['username'])){ ?> 
+        <button class="btn-comentar">Comentar</button>    
+    <? } else{ ?>
+        <a href="/login" class="btn-cadastrar">Faça login para poder comentar</a> 
+    <? } ?>
+
 </section>
