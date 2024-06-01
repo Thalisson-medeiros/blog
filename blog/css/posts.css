@@ -15,8 +15,43 @@ body {
     background-color: #0088ffff;
 }
 
-.menu-escondido {
+.icones-menu-escondido {
     display: none;
+}
+
+.menu-escondido {
+    height: 0px;
+    overflow: hidden;
+    transition: 1s;
+}
+
+.menu-escondido > ul {
+    border-top: 1px solid #fff;
+    height: 100%;
+    background-color: #0088ffff;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.menu-escondido-btn {
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    text-decoration: none;
+}
+
+.menu-escondido-btn:hover {
+    color: #000;
+}
+
+.menu-escondido.ativo {
+    height: 200px;
+    transition: 1s;
 }
 
 /* menu --------------------*/
@@ -81,28 +116,9 @@ body {
 .favoritos {
     max-height: 800px;
     width: 300px;
-    padding: 0px 10px;
+    padding: 20px 10px;
     margin-left: 50px;
     background-color: rgb(0, 153, 255);
-}
-
-.favoritos-botoes {
-    height: 60px;
-    margin-bottom: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.botao {
-    height: 50px;
-    width: 50px;
-    font-size: 1em;
-    margin: 5px;
-    color: blue;
-    border: none;
-    background-color: #fff;
-    cursor: pointer;
 }
 
 .favoritos-post {
@@ -147,11 +163,6 @@ body {
 }
 
 /* favoritos ---------------------*/
-
-.menu-escondido.ativo {
-    height: 250px;
-    transition: 1s;
-}
 
 @media screen and (max-width: 1000px) {
     .todos-os-posts {
@@ -211,48 +222,19 @@ body {
         display: none;
     }
 
-    .menu-escondido {
-        display: block;
-        height: 40px;
-        overflow: hidden;
-        transition: 1s;
-        line-height: 40px;
-        background: #0088ffff;
-    }
-
-    .menu-escondido > div {
-        width: 90%;
-        margin: 0px auto;
+    .icones-menu-escondido {
         display: flex;
         justify-content: space-between;
         align-items: center;
-    }
+        padding: 0px 20px;
+        height: 40px;
+        transition: 1s;
+        background: #0088ffff;
+    } 
+}
 
-    .menu-escondido > div > a{
-        color: #fff;
-    }
-
-    .menu-escondido-items {
-        height: 100%;
-        width: 100%;
-        border-top: 1px solid #fff;
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-    }
-
-    .menu-escondido-btn {
-        color: #fff;
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-        font-size: 1em;
-        text-decoration: none;
-    }
-
-    .menu-escondido-btn:hover {
-        color: #000;
+@media screen and (min-width: 600px) {
+    .menu-escondido.ativo {
+        height: 0px;
     }
 }

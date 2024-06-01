@@ -1,0 +1,52 @@
+.cadastro {
+    margin: 100px auto;
+    width: 400px;
+    height: 300px;
+    background-color: #0088ffff;
+}
+
+.formulario-cadastro {
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+input {
+    width: 80%;
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    background-color: transparent;
+}
+
+input::placeholder {
+    color: #fff;
+    font-size: 16px;
+}
+
+.btn-formulario {
+    height: 40px;
+    background-color: #fff;
+    color: #0088ffff;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-formulario:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+p {
+    text-align: center;
+}
+
+p > a {
+    margin-left: 5px;
+    color: #fff;
+    text-decoration: none;
+}
