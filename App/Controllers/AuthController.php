@@ -54,7 +54,7 @@ class AuthController extends Action
     public function comentar(): void
     {      
         $comment = Container::getModel('Comment');
-        $comment->createNewComment($_POST['id_user'],$_POST['id_post'],$_POST['comment']);
+        $comment->createNewComment($_POST['name'],$_POST['id_user'],$_POST['id_post'],$_POST['comment']);
         header('Location:/post?id='.$_POST['id_post']);
     }
 

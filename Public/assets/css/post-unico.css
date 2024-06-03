@@ -18,7 +18,6 @@ h1 {
 }
 
 .post-unico-conteudo {
-    /* background-color: red; */
     width: 80%;
     margin: 5px auto;
 }
@@ -101,15 +100,23 @@ h1 {
     margin: 0px auto;
 }
 
-.texto-comentario {
+.texto-comentario, .texto-comentario-usuario {
+    border: 1px solid #ccc;
     outline: none;
     height: 150px;
     width: 100%; 
     resize: none;
     padding: 10px;
+    font-size: 16px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.btn-comentar {
+    width: 200px;
 }
 
 .btn-cadastrar, .btn-comentar {
+    display: inline-block;
     color: #fff;
     text-decoration: none;
     background-color: #0088ffff;
@@ -123,6 +130,20 @@ h1 {
     color: #fff;
     background-color: #000;
 }
+
+/* comentarios */
+
+.comentarios-usuarios {
+    margin-block: 50px;
+    /* background-color: green; */
+}
+
+.texto-comentario-usuario 
+{
+    height: 100px;
+    margin-bottom: 20px;
+}
+
 
 @media screen and (max-width: 800px){
     .posts-relacionados {

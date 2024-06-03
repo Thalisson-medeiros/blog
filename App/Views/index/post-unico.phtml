@@ -1,8 +1,13 @@
 <?php
     
     // echo '<pre>';
-    // print_r($this->view->onePost);
+    // print_r($this->view->comments);
     // echo '</pre>';
+
+    // echo '<pre>';
+    // print_r($this->view->nameUsers);
+    // echo '</pre>';
+
 ?>
 
 <h1><?=$this->view->onePost['title_post']?></h1>
@@ -26,17 +31,17 @@
 
 <section class="posts-relacionados">
     <a href="#" class="imagem-posts-relacionados">
-        <img src="foto2.png" alt="foto">
+        <img src="<?=$this->view->onePost['image_post']?>" alt="foto">
         <h2 class="posts-relacionados-titulo ">titulo</h2>
     </a>
 
     <a href="#" class="imagem-posts-relacionados">
-        <img src="foto2.png" alt="foto">
+        <img src="<?=$this->view->onePost['image_post']?>" alt="foto">
         <h2 class="posts-relacionados-titulo ">titulo</h2>
     </a>
 
     <a href="#" class="imagem-posts-relacionados">
-        <img src="foto2.png" alt="foto">
+        <img src="<?=$this->view->onePost['image_post']?>" alt="foto">
         <h2 class="posts-relacionados-titulo ">titulo</h2>
     </a>
 </section>
@@ -46,12 +51,17 @@
 </div>
 
 <section class="comentarios">
-    <h2><span class="quantidade-comentarios">0</span>Comentários:</h2>
+    <h2><span class="quantidade-comentarios"><?=$this->view->comments['qtd_comments']?></span>Comentários:</h2>
 
     <form action="/comentar" method="post">
         
         <input type="hidden" name="id_post" value="<?= $this->view->onePost['id_post'] ?>">
-        <input type="hidden" name="id_user" value="<?= $_SESSION['id'] ?>">
+
+        <? if(isset($_SESSION['id'])) { ?>
+            <input type="hidden" name="name" value="<?= $_SESSION['username'] ?>">
+            <input type="hidden" name="id_user" value="<?= $_SESSION['id'] ?>">
+        <? } ?>
+
         <textarea name="comment" class="texto-comentario" placeholder="Comentar..."></textarea>
         
         <?if(isset($_SESSION['username'])){ ?> 
@@ -61,4 +71,10 @@
         <? } ?>
     </form>
 
+    <section class="comentarios-usuarios">
+        <?foreach($this->view->nameUsers as $idx => $value){?>
+            <small><?= $value['name'] ?> Comentou:</small>
+            <textarea class="texto-comentario-usuario" readonly placeholder="<?= $value['comment'] ?>"></textarea>
+        <?}?>
+    </section>
 </section>

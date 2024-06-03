@@ -24,6 +24,10 @@ class IndexController extends Action
         $post = Container::getModel('posts');
         $this->view->onePost = $post->getOnePost($_GET['id']);
 
+        $comments = Container::getModel('Comment');
+        $this->view->comments = $comments->getQuantityComment($_GET['id']);
+        $this->view->nameUsers = $comments->getUsernameComments($_GET['id']);
+
         $this->render('post-unico');
     }
 
