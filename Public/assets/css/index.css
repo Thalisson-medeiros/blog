@@ -59,52 +59,57 @@ body {
 .todos-os-posts {
     max-width: 1200px;
     margin: 0px auto;
-    /* background-color: #ccc; */
     display: flex;
     justify-content: center;
 }
 
 .posts {
     width: 650px;
-    /* background-color: yellow; */
 }
 
 .post {
+    height: 250px;
     margin-bottom: 20px;
     border-bottom: 1px solid #0088ffff;
     padding: 20px 0px;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    overflow: hidden;
 }
 
-.post-imagem {
+.post-image-titulo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.post-image-titulo > div {
+    text-align: center;
+}
+
+.post-image {
+    margin-right: 20px;
     height: 100%;
     max-width: 300px;
 }
 
-.post-imagem > img {
-    height: 100%;
-    width: 100%;
-}
-
-.post-conteudo {
+.post-texto > p {
     text-align: justify;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 10px;
+    text-overflow: ellipsis;
+    white-space: normal;
+    
 }
 
 .titulo-post {
     text-align: center;
     text-decoration: none;
-    font-size: 2em;
+    font-size: 1.5em;
     color: blue;
     margin-bottom: 10px;
     display: block;
-}
-
-.post-conteudo>span {
-    color: blue;
 }
 
 .titulo-post:hover {
@@ -114,7 +119,7 @@ body {
 /* post ---------------------------- */ 
 
 .favoritos {
-    max-height: 800px;
+    max-height: 600px;
     width: 300px;
     padding: 20px 10px;
     margin-left: 50px;
@@ -122,7 +127,7 @@ body {
 }
 
 .favoritos-post {
-    height: 150px;
+    /* height: 150px; */
     padding: 20px;
     border-top: 1px solid lightgray;
     margin: 0px auto;
@@ -137,6 +142,12 @@ body {
 .favoritos-post>div {
     display: flex;
     margin-bottom: 20px;
+}
+
+.favoritos-texto-post > p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .titulo-lateral {
@@ -196,6 +207,14 @@ body {
     }
 
     .post {
+        height: 400px;
+    }
+
+    .post-image {
+        margin: 0px;
+    }
+
+    .post-image-titulo {
         flex-direction: column;
     }
 

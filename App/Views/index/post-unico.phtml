@@ -1,28 +1,23 @@
-<link rel="stylesheet" href="../css/post-unico.css">
+<?php
+    
+    // echo '<pre>';
+    // print_r($this->view->onePost);
+    // echo '</pre>';
+?>
 
-<h1>titulo</h1>
+<h1><?=$this->view->onePost['title_post']?></h1>
 
 <div class="post-unico-titulo">
-    <span>20/20/2020</span>
-    <span>alguem</span>
-    <span>Esporte</span>
+    <span><?=$this->view->onePost['date_post']?></span>
+    <span><?=$this->view->onePost['author']?></span>
+    <span><?=$this->view->onePost['category']?></span>
 </div>
 
 <section class="post-unico-conteudo">
     <div class="imagem">
-        <img src="foto2.png" alt="foto">
+        <img src="<?=$this->view->onePost['image_post']?>" alt="foto">
     </div>
-    <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore 
-        mollitia quisquam exercitationem quas excepturi non fugiat, nihil, 
-        illo esse doloribus amet? Cum odit commodi provident aperiam? 
-        Repellendus tempora minus itaque.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-        Unde doloremque, modi quidem fuga ratione possimus similique 
-        tenetur soluta sit dicta fugiat sequi alias iure temporibus 
-        vero optio natus laboriosam voluptatum. 
-    </p>
+    <p><?=$this->view->onePost['description']?></p>
 </section>
 
 <div class="subtitulo">
@@ -53,17 +48,17 @@
 <section class="comentarios">
     <h2><span class="quantidade-comentarios">0</span>Comentários:</h2>
 
-    <div>
-        <textarea name="comentario" class="texto-comentario" placeholder="Comentar..."></textarea>
-    </div>
-
-    <!-- aqui fazer uma verificação. se o usuario for cadastrado mostrar a caixa de texto
-         senão mostrar o botão de cadastro. -->
-
-    <?if(isset($_SESSION['username'])){ ?> 
-        <button class="btn-comentar">Comentar</button>    
-    <? } else{ ?>
-        <a href="/login" class="btn-cadastrar">Faça login para poder comentar</a> 
-    <? } ?>
+    <form action="/comentar" method="post">
+        
+        <input type="hidden" name="id_post" value="<?= $this->view->onePost['id_post'] ?>">
+        <input type="hidden" name="id_user" value="<?= $_SESSION['id'] ?>">
+        <textarea name="comment" class="texto-comentario" placeholder="Comentar..."></textarea>
+        
+        <?if(isset($_SESSION['username'])){ ?> 
+            <input type="submit" class="btn-comentar" value="comentar">    
+        <? } else{ ?>
+            <a href="/login" class="btn-cadastrar">Faça login para poder comentar</a> 
+        <? } ?>
+    </form>
 
 </section>

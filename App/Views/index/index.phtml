@@ -3,75 +3,49 @@
         echo  $_SESSION['username'];
     }
 
-    // posts
-    // echo '<pre>';
-    // print_r($this->view->posts);
-    // echo '</pre>';
-
-    //favorites
-    echo '<pre>';
-    print_r($this->view->favoritePosts);
-    echo '</pre>';
 ?>
 
 <title>principal</title>
 
 <section class="todos-os-posts">
     <section class="posts">
-        <div class="post">
-            <a href="/post?nome=thalisson&sobrenome=medeiros" class="post-imagem">
-                <img src="imagens/foto2.png" alt="foto">
-            </a>
-            <article class="post-conteudo">
-                <a href="#" class="titulo-post">titulo</a>
-                <span>20/20/2020</span>
-                <span>alguem</span>
-                .
-                <span>esporte</span>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae 
-                </p>
-            </article>
-        </div>
+
+        <?php foreach($this->view->posts as $idx => $post){?>
+            <div class="post">
+                <div class="post-image-titulo">
+                    <a href="/post?id=<?= $post['id_post']?>">
+                        <img class="post-image" src="<?= $post['image_post']?>" alt="foto">
+                    </a>
+                    <div>
+                        <a href="/post?id=<?= $post['id_post']?>" class="titulo-post"><?= $post['title_post']?></a>
+                        <small><?= $post['date_post']?></small>
+                        <small><?= $post['author']?></small>/
+                        <small><?= $post['category']?></small>
+                    </div>
+                </div>
+                <div class="post-texto">
+                    <p><?= $post['description']?></p>
+                </div>
+            </div>
+        <?}?>
     </section>
     
     <aside class="favoritos">
-        <div class="favoritos-post">
-            <div>
-                <a href="#" class="imagem-lateral">
-                    <img src="imagens/foto2.png" alt="foto">
-                </a>  
-                <a href="#" class="titulo-lateral">um titulo maior o possivel</a>
+
+        <?php foreach($this->view->favoritePosts as $idx => $post){?>
+            <div class="favoritos-post">
+                <div>
+                    <a href="/post?id=<?= $post['id_post']?>" class="imagem-lateral">
+                        <img src="<?= $post['image_post'] ?>" alt="foto">
+                    </a>  
+                    <a href="/post?id=<?= $post['id_post']?>" class="titulo-lateral"><?= $post['title_post'] ?></a>
+                </div>
+                <div class="favoritos-texto-post">
+                    <p><?= $post['description'] ?></p>
+                </div>
             </div>
-            <p>
-                blanditiis mollitia expedita,
-                illum quibusdam maxime aliquid repellat delectus? 
-            </p>
-        </div>
-        <div class="favoritos-post">
-            <div>
-                <a href="#" class="imagem-lateral">
-                    <img src="imagens/foto2.png" alt="foto">
-                </a>  
-                <a href="#" class="titulo-lateral">um titulo maior o possivel</a>
-            </div>
-            <p>
-                blanditiis mollitia expedita,
-                illum quibusdam maxime aliquid repellat delectus? 
-            </p>
-        </div>
-        <div class="favoritos-post">
-            <div>
-                <a href="#" class="imagem-lateral">
-                    <img src="imagens/foto2.png" alt="foto">
-                </a>  
-                <a href="#" class="titulo-lateral">um titulo maior o possivel</a>
-            </div>
-            <p>
-                blanditiis mollitia expedita,
-                illum quibusdam maxime aliquid repellat delectus? 
-            </p>
-        </div>
+        <?}?>
+        
         <h2>#Siga-nos</h2>
     </aside>
 </section>

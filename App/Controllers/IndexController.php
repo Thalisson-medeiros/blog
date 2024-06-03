@@ -21,6 +21,9 @@ class IndexController extends Action
 
     public function post()
     {
+        $post = Container::getModel('posts');
+        $this->view->onePost = $post->getOnePost($_GET['id']);
+
         $this->render('post-unico');
     }
 

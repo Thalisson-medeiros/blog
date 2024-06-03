@@ -50,6 +50,12 @@ class Routes extends Bootstrap
             'action' => 'exit'
         ];
 
+        $route['comentar'] = [
+            'route' => '/comentar',
+            'controller' => 'AuthController',
+            'action' => 'comentar'
+        ];
+
         $this->setRoutes($route);
     }
 }
